@@ -1,0 +1,58 @@
+t1 = [-20 : 0.01 : 20];  %For continuous time
+t2 = [-20 : 1 : 20];     %For discrete time
+
+us1 = t1 >= 0;
+us2 = t2 >= 0;
+ui1 = t1 == 0;
+ui2 = t2 == 0;
+rm1 = t1 .* us1;
+rm2 = t2 .* us2;
+
+
+subplot(3,2,1);
+plot(t1,us1);
+axis([-20 20 -2 2]);
+title('Continuous unit step signal');
+xlabl('t');
+ylabel('f(t)');
+
+
+subplot(3,2,2);
+stem(t2 , us2);
+axis([-20 20 -2 2]);
+title('Discrete unit step signal');
+xlabl('t');
+ylabel('f(t)');
+
+
+subplot(3,2,3);
+plot(t1,ui1);
+axis([-20 20 -2 2]);
+title('Continuous unit impulse signal');
+xlabl('t');
+ylabel('f(t)');
+
+
+subplot(3,2,4);
+stem(t2 , ui2);
+axis([-20 20 -2 2]);
+title('Discrete unit impulse signal');
+xlabl('t');
+ylabel('f(t)');
+
+subplot(3,2,5);
+plot(t1,rm1);
+axis([-20 20 -20 20]);
+title('Continuous ramp signal');
+xlabl('t');
+ylabel('f(t)');
+
+
+subplot(3,2,6);
+stem(t2 , rm2);
+axis([-20 20 -20 20]);
+title('Discrete ramp signal');
+xlabl('t');
+ylabel('f(t)');
+
+
